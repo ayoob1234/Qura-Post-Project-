@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Posts</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Qura Posts</h1>
+        <nav>
+            <a href="http://localhost:8080/posts/new" class="create-post">Create New Post</a>
+        </nav>
+        
+    </header>
+    
+    <main>
+        <% for (let post of posts) { %>
+            <article class="post">
+                <h2 class="post-id">Post ID: <%= post.Id %></h2>
+                <h3 class="user">@<%= post.username %></h3>
+                <p class="content"><%= post.content %></p>
+
+                <div class="post-actions">
+                   <a href="http://localhost:8080/posts/<%= post.Id %>" class="detail-link">See Details</a>&nbsp;&nbsp;&nbsp;
+                    <a href="http://localhost:8080/posts/<%= post.Id %>/edit" class="edit-link">Edit Post</a><br><br>
+
+                    <form action="/posts/<%= post.Id %>?_method=DELETE" method="post" class="delete-form">
+                        <button type="submit" class="delete-button">Delete Post</button>
+                    </form>
+                </div>
+            </article>
+        <% } %>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 Qura Posts. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>See in Details</title>
+   <style>
+    /* style.css */
+
+    /* Basic reset */
+    body, h1, h2, h3, p, a {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+    }
+    
+    /* Body styling */
+    body {
+        background-color: #f4f4f4;
+        color: #333;
+        padding: 20px;
+    }
+    
+    /* Header styling */
+    header {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    
+    h1 {
+        color: #007BFF;
+    }
+    
+    /* Main post styling */
+    .post {
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        padding: 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        max-width: 600px;
+        margin: auto;
+    }
+    
+    /* User and content styling */
+    .user {
+        font-size: 18px;
+        font-style: italic;
+        color: #555;
+        margin-bottom: 15px;
+    }
+    
+    .content {
+        font-size: 16px;
+        line-height: 1.5;
+        color: #666;
+    }
+    
+    /* Navigation styling */
+    .post-navigation {
+        margin-top: 20px;
+        text-align: center;
+    }
+    
+    .back-link, .edit-link {
+        display: inline-block;
+        margin: 10px;
+        padding: 10px 15px;
+        background-color: #007BFF;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+    
+    .back-link:hover, .edit-link:hover {
+        background-color: #0056b3;
+    }
+    
+    /* Footer styling */
+    footer {
+        text-align: center;
+        margin-top: 20px;
+    }
+    
+</style>
+  
+<body>
+    <header>
+        <h1>Post Details</h1>
+    </header>
+    
+    <main>
+        <article class="post">
+            <h2>Post ID: <%= post.Id %></h2>
+            <h3 class="user">Username: @<%= post.username %></h3>
+            <p class="content">Content: <%= post.content %></p>
+        </article>
+        
+        <nav class="post-navigation">
+            <a href="http://localhost:8080/posts" class="back-link">Back to All Posts</a>
+            <a href="http://localhost:8080/posts/<%= post.Id %>/edit" class="edit-link">Edit Post</a>
+        </nav>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Qura Posts. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
+
+

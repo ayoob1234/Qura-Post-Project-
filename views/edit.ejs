@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Rout</title>
+    <style>
+    /* style.css */
+
+    /* Basic reset */
+    body, h1, h3, h4, p, a, button, textarea {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+    }
+    
+    /* Body styling */
+    body {
+        background-color: #f4f4f4;
+        color: #333;
+        padding: 20px;
+    }
+    
+    /* Header styling */
+    header {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    
+    h1 {
+        color: #007BFF;
+    }
+    
+    /* Post details section */
+    .post-details {
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    
+    /* Form styling */
+    .edit-form {
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        padding: 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        max-width: 600px;
+        margin: auto;
+    }
+    
+    label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+    
+    textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+    
+    /* Button styling */
+    .submit-button {
+        background-color: #007BFF;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 15px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    
+    .submit-button:hover {
+        background-color: #0056b3;
+    }
+    
+    /* Navigation links */
+    .navigation {
+        margin-top: 20px;
+        text-align: center;
+    }
+    
+    .back-link {
+        display: inline-block;
+        margin: 10px;
+        padding: 10px 15px;
+        background-color: #28a745;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+    
+    .back-link:hover {
+        background-color: #218838;
+    }
+    
+    /* Footer styling */
+    footer {
+        text-align: center;
+        margin-top: 20px;
+    }
+   </style>
+   
+</head>
+<body>
+    <header>
+        <h1>Edit Your Post</h1>
+    </header>
+    
+    <main>
+        <section class="post-details">
+            <h3>Post ID: <%= post.Id %></h3>
+            <h4>Post Username: @<%= post.username %></h4>
+        </section>
+
+        <form action="/posts/<%= post.Id %>?_method=patch" method="post" class="edit-form">
+            <label for="content">Content:</label>
+            <textarea id="content" name="content" cols="30" rows="10" required><%= post.content %></textarea>
+            <button type="submit" class="submit-button">Submit</button>
+        </form>
+
+        <nav class="navigation">
+            <a href="http://localhost:8080/posts" class="back-link">Back to All Posts</a>
+        </nav>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Qura Posts. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

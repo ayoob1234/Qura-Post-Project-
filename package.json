@@ -1,0 +1,20 @@
+{
+  "name": "qura-post",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "dev": "nodemon index.js",
+    "test": "jest"
+  },
+  "author": "ayoob khna",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.1",
+    "method-override": "^3.0.0",
+    "nodemon": "^3.1.7",
+    "uuid": "^10.0.0"
+  }
+}
