@@ -19,6 +19,9 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use(methodOverride('_method'));
 
+
+
+
 // Initial posts data
 let posts = [
     { Id:uuidv4(), username: "ayoob khan", content: "I am so excited" },
@@ -75,7 +78,7 @@ app.delete("/posts/:Id",(req,res)=>{
    
    res.redirect("/posts");
 
-})
+});
 
 
 // Start the server
